@@ -32,7 +32,7 @@ A Model Context Protocol server that provides access to Kuzu databases. This ser
     }
   }
   ```
-  Change the `{Absolute Path to this repository}` and `{Absolute Path to the Kuzu database}` to the actual paths.
+  Change the `{Absolute Path to this repository}` and `{Absolute Path to the Kuzu database}` to the actual paths
 - Restart Claude Desktop
 
 ### With Docker
@@ -58,5 +58,5 @@ A Model Context Protocol server that provides access to Kuzu databases. This ser
     }
   }
   ```
-  Change the `{Absolute Path to the Kuzu database}` to the actual path.
+  Change the `{Absolute Path to the Kuzu database}` to the actual path
 - Restart Claude Desktop
