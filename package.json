@@ -1,0 +1,15 @@
+{
+  "name": "kuzu-mcp",
+  "version": "0.0.1",
+  "description": "Kuzu MCP server implementation",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.7.0",
+    "kuzu": "^0.8.2"
+  }
+}
