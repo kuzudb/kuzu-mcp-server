@@ -1,8 +1,6 @@
 const { Server } = require("@modelcontextprotocol/sdk/server/index.js");
 const { StdioServerTransport } = require("@modelcontextprotocol/sdk/server/stdio.js");
 const {
-  ListResourcesRequestSchema,
-  ReadResourceRequestSchema,
   ListToolsRequestSchema,
   CallToolRequestSchema,
 } = require("@modelcontextprotocol/sdk/types.js");
@@ -98,36 +96,6 @@ const getSchema = async (connection) => {
   relTables.sort((a, b) => a.name.localeCompare(b.name));
   return { nodeTables, relTables };
 };
-
-server.setRequestHandler(ListResourcesRequestSchema, async () => {
-  return {
-    resources: [
-      {
-        uri: SCHEMA_URI,
-        name: "Kuzu Schema",
-        description: "The full schema of the Kuzu database, including all nodes and relationships tables and their properties.",
-        mimeType: "application/json",
-      }
-    ]
-  };
-});
-
-server.setRequestHandler(ReadResourceRequestSchema, async (request) => {
-  const uri = request.params.uri;
-  if (uri === SCHEMA_URI) {
-    const schema = await getSchema(conn);
-    return {
-      contents: [
-        {
-          uri,
-          mimeType: "application/json",
-          text: JSON.stringify(schema, null, 2)
-        }
-      ]
-    };
-  }
-  throw new Error("Resource not found");
-});
 
 server.setRequestHandler(ListToolsRequestSchema, async () => {
   return {
