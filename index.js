@@ -6,7 +6,6 @@ const {
 } = require("@modelcontextprotocol/sdk/types.js");
 const kuzu = require("kuzu");
 
-const SCHEMA_URI = "schema://main";
 const TABLE_TYPES = {
   NODE: "NODE",
   REL: "REL",
