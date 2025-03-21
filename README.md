@@ -45,7 +45,7 @@ A Model Context Protocol server that provides access to Kuzu databases. This ser
   {
     "mcpServers": {
         "kuzu": {
-            "command": "node",
+            "command": "docker",
             "args": [
                 "run",
                 "-v",
