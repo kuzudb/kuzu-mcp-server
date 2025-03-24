@@ -40,6 +40,8 @@ A Model Context Protocol server that provides access to Kuzu databases. This ser
     }
   }
   ```
+  Change the `{Absolute Path to the Kuzu database}` to the actual path
+- Restart Claude Desktop
 
 ### With Node.js and npm (for Development)
 - Install dependencies: `npm install`
@@ -63,6 +65,24 @@ A Model Context Protocol server that provides access to Kuzu databases. This ser
   Change the `{Absolute Path to this repository}` and `{Absolute Path to the Kuzu database}` to the actual paths
 - Restart Claude Desktop
 
-
-  Change the `{Absolute Path to the Kuzu database}` to the actual path
-- Restart Claude Desktop
+### Read-Only Mode
+The server can be run in read-only mode by setting the `KUZU_READ_ONLY` environment variable to `true`. In this mode, running any query that attempts to modify the database will result in an error. This flag can be set in the configuration file as follows:
+```json
+{
+    "mcpServers": {
+        "kuzu": {
+            "command": "docker",
+            "args": [
+                "run",
+                "-v",
+                "{Absolute Path to the Kuzu database}:/database",
+                "-e",
+                "KUZU_READ_ONLY=true",
+                "--rm",
+                "-i",
+                "kuzudb/mcp-server"
+            ],
+        }
+    }
+}
+```
