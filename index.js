@@ -49,6 +49,8 @@ if (args.length === 0) {
   dbPath = args[0];
 }
 
+const isReadOnly = process.env.KUZU_READ_ONLY === "true";
+
 process.on("SIGINT", () => {
   process.exit(0);
 });
@@ -57,7 +59,7 @@ process.on("SIGTERM", () => {
   process.exit(0);
 });
 
-const db = new kuzu.Database(dbPath);
+const db = new kuzu.Database(dbPath, readOnly=isReadOnly);
 const conn = new kuzu.Connection(db);
 
 const getPrompt = (question, schema) => {
