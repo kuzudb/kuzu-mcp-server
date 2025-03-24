@@ -59,7 +59,7 @@ process.on("SIGTERM", () => {
   process.exit(0);
 });
 
-const db = new kuzu.Database(dbPath, readOnly=isReadOnly);
+const db = new kuzu.Database(dbPath, 0, true, isReadOnly);
 const conn = new kuzu.Connection(db);
 
 const getPrompt = (question, schema) => {
