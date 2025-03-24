@@ -9,7 +9,7 @@ A Model Context Protocol server that provides access to Kuzu databases. This ser
   -  Input: None
 
 - query
-  - Run a Cypher query on the Kuzu database.
+  - Run a Cypher query on the Kuzu database
   - Input: `cypher` (string): The Cypher query to run
 
 ### Prompt
