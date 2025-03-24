@@ -199,7 +199,7 @@ server.setRequestHandler(ListPromptsRequestSchema, async () => {
   return {
     prompts: [
       {
-        name: "generate-kuzu-cypher",
+        name: "generateKuzuCypher",
         description: "Generate a Cypher query for Kuzu",
         arguments: [
           {
@@ -214,7 +214,7 @@ server.setRequestHandler(ListPromptsRequestSchema, async () => {
 });
 
 server.setRequestHandler(GetPromptRequestSchema, async (request) => {
-  if (request.params.name === "generate-kuzu-cypher") {
+  if (request.params.name === "generateKuzuCypher") {
     const question = request.params.arguments.question;
     const schema = await getSchema(conn);
     return {
