@@ -2,6 +2,10 @@
 
 A Model Context Protocol server that provides access to Kuzu databases. This server enables LLMs to inspect database schemas and execute queries on provided kuzu database.
 
+<a href="https://glama.ai/mcp/servers/@kuzudb/kuzu-mcp-server">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@kuzudb/kuzu-mcp-server/badge" alt="Kuzu server MCP server" />
+</a>
+
 ## Components
 ### Tools 
 - getSchema
