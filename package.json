@@ -10,6 +10,6 @@
   "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.7.0",
-    "kuzu": "0.9.0"
+    "kuzu": "0.10.0"
   }
 }
