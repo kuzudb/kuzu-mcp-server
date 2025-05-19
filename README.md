@@ -1,5 +1,7 @@
 # kuzu-mcp-server
 
+[![smithery badge](https://smithery.ai/badge/@kuzudb/kuzu-mcp-server)](https://smithery.ai/server/@kuzudb/kuzu-mcp-server)
+
 A Model Context Protocol server that provides access to Kuzu databases. This server enables LLMs to inspect database schemas and execute queries on provided kuzu database.
 
 ## Components
@@ -18,6 +20,14 @@ A Model Context Protocol server that provides access to Kuzu databases. This ser
   - Argument: `question` (string): The question in natural language to generate the Cypher query for
 
 ## Usage with Claude Desktop
+### Installing via Smithery
+
+To install Kuzu Database Access Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@kuzudb/kuzu-mcp-server):
+
+```bash
+npx -y @smithery/cli install @kuzudb/kuzu-mcp-server --client claude
+```
+
 ### With Docker (Recommended)
 - Edit the configuration file `config.json`:
   - on macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
