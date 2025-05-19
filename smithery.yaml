@@ -1,0 +1,25 @@
+# Smithery configuration file: https://smithery.ai/docs/build/project-config
+
+startCommand:
+  type: stdio
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => ({ command: 'node', args: ['index.js', config.dbPath], env: config.readOnly ? { KUZU_READ_ONLY: 'true' } : {} })
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - dbPath
+    properties:
+      dbPath:
+        type: string
+        default: /database
+        description: Path to the Kuzu database directory inside the container
+      readOnly:
+        type: boolean
+        default: false
+        description: Run server in read-only mode
+  exampleConfig:
+    dbPath: /database
+    readOnly: false
