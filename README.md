@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/kuzudb-kuzu-mcp-server-badge.png)](https://mseep.ai/app/kuzudb-kuzu-mcp-server)
+
 # kuzu-mcp-server
 
 A Model Context Protocol server that provides access to Kuzu databases. This server enables LLMs to inspect database schemas and execute queries on provided kuzu database.
