@@ -24,7 +24,7 @@ RUN npm install &&\
 
 # Set environment variables
 ENV NODE_ENV=production
-ENV KUZU_DB_PATH=/database
+ENV KUZU_DB_DIR=/database
 
 # Run app
 ENTRYPOINT ["node", "index.js"]

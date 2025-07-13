@@ -7,7 +7,7 @@ const {
   GetPromptRequestSchema,
 } = require("@modelcontextprotocol/sdk/types.js");
 const kuzu = require("kuzu");
-
+const path = require("path");
 const TABLE_TYPES = {
   NODE: "NODE",
   REL: "REL",
@@ -38,11 +38,12 @@ let dbPath;
 
 const args = process.argv.slice(2);
 if (args.length === 0) {
-  const envDbPath = process.env.KUZU_DB_PATH;
-  if (envDbPath) {
-    dbPath = envDbPath;
+  const envDbDir = process.env.KUZU_DB_DIR;
+  const envDbFile = process.env.KUZU_DB_FILE;
+  if (envDbDir && envDbFile) {
+    dbPath = path.join(envDbDir, envDbFile);
   } else {
-    console.error("Please provide a path to kuzu database as a command line argument");
+    console.error("Please provide a path to kuzu database as a command line argument or set KUZU_DB_FILE environment variable if you are launching the server in a container.");
     process.exit(1);
   }
 } else {

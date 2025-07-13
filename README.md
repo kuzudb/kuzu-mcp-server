@@ -31,7 +31,9 @@ A Model Context Protocol server that provides access to Kuzu databases. This ser
             "args": [
                 "run",
                 "-v",
-                "{Absolute Path to the Kuzu database}:/database",
+                "{Path to the directory containing Kuzu database file}:/database",
+                "-e",
+                "KUZU_DB_FILE={Kuzu database file name}",
                 "--rm",
                 "-i",
                 "kuzudb/mcp-server"
@@ -40,7 +42,7 @@ A Model Context Protocol server that provides access to Kuzu databases. This ser
     }
   }
   ```
-  Change the `{Absolute Path to the Kuzu database}` to the actual path
+  Change the `{Path to the directory containing Kuzu database file}` to the actual path
 - Restart Claude Desktop
 
 ### With Node.js and npm (for Development)
@@ -56,13 +58,13 @@ A Model Context Protocol server that provides access to Kuzu databases. This ser
             "command": "node",
             "args": [
                 "{Absolute Path to this repository}/index.js",
-                "{Absolute Path to the Kuzu database}",
+                "{Absolute Path to the Kuzu database file}",
             ]
         }
     }
   }
   ```
-  Change the `{Absolute Path to this repository}` and `{Absolute Path to the Kuzu database}` to the actual paths
+  Change the `{Absolute Path to this repository}` and `{Absolute Path to the Kuzu database file}` to the actual paths
 - Restart Claude Desktop
 
 ### Read-Only Mode
@@ -75,7 +77,9 @@ The server can be run in read-only mode by setting the `KUZU_READ_ONLY` environm
             "args": [
                 "run",
                 "-v",
-                "{Absolute Path to the Kuzu database}:/database",
+                "{Path to the directory containing Kuzu database file}:/database",
+                "-e",
+                "KUZU_DB_FILE={Kuzu database file name}",
                 "-e",
                 "KUZU_READ_ONLY=true",
                 "--rm",
